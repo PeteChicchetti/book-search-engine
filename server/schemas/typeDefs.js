@@ -9,6 +9,15 @@ const typeDefs = gql`
     SavedBooks: [Book]
   }
 
+  type Book {
+    bookId: ID
+    author: [String]
+    description: String
+    title: String
+    image: String
+    link: String
+  }
+
 `;
 
 module.exports = typeDefs;
