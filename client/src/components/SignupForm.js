@@ -24,7 +24,7 @@ const SignupForm = () => {
     }
   }, [error]);
 
-  
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
@@ -41,18 +41,12 @@ const SignupForm = () => {
     }
 
     try {
-      const response = await createUser(userFormData);
-
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
+      const { data } = await addUser({ variables: { ...userFormData }, });
+      console.log(data);
+      Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
-      setShowAlert(true);
+
     }
 
     setUserFormData({
