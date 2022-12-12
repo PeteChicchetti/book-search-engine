@@ -29,6 +29,7 @@ export const ADD_USER = gql`
             title
             image
             link
+        }    
       }
     }
   }
