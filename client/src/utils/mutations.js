@@ -8,7 +8,6 @@ export const LOGIN_USER = gql`
       user {
         _id
         email
-        username
       }
     }
   }
