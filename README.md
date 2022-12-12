@@ -5,7 +5,9 @@ This is a functioning Google Books API search engine built with a RESTful API th
           
 ## Description
 
-This application allows the user to search and save books to their account
+This application allows the user to search and save books to their account </br>
+Heroku Live Link: https://obscure-peak-48294.herokuapp.com/ </br>
+[![GoogleBooks Search Page](./client/public/googlebooks.png)
           
 ## Table of Contents
 
