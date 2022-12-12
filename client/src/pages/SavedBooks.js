@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
@@ -10,7 +10,7 @@ import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
-  const [removeBook, { error }] = useMutation(REMOVE_BOOK);
+  const [removeBook] = useMutation(REMOVE_BOOK);
   const userData = data?.me || {};
 
 
@@ -28,9 +28,13 @@ const SavedBooks = () => {
 
 
     } catch (err) {
-      console.error(err);
+      console.log(err);
     }
   };
+
+  if (loading) {
+    return <h2>LOADING...</h2>;
+  }
 
   return (
     <>
